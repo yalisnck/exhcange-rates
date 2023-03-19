@@ -1,2 +1,0 @@
-# exhcange-rates
-test
