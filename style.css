@@ -1,0 +1,133 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 28px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #444;
+    color: white;
+}
+
+p {
+    font-size: .8rem;
+}
+
+img {
+    width: 5rem;
+
+}
+
+header .container-fluid {
+    background-color: #888;
+    color: black;
+}
+
+.box {
+    background-color: #888;
+    width: 32%;
+    height: 5rem;
+    display: flex;
+    border-radius: .3rem;
+    display: none;
+}
+
+
+/* 
+  ##Cihaz = Masaüstü
+  ##Ekran = 1281px 'den yüksek çözünürlükler için
+*/
+
+@media screen and (min-width: 1281px) {
+    html {
+        font-size: 24px;
+    }
+}
+
+/* 
+    ##Cihaz = Laptoplar, Masaüstü
+    ##Ekran = 1025px to 1280px Arası Ekranlar
+  */
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+/* 
+    ##Cihaz = Tabletler, Ipad (portrait/dikey modda)
+    ##Ekran = 768px to 1024px Arası Ekranlar
+  */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/* 
+    ##Cihaz = Tabletler, Ipad (landscape/yatay modda)
+    ##Ekran = 768px to 1024px Arası Ekranlar
+  */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/* 
+    ##Cihaz = Düşük Çözünürlüklü Tablet ve Mobil Ekranlar (Landscape / Yatay Modda)
+    ##Ekran = 481px to 767px Arası Ekranlar
+  */
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    html {
+        font-size: 10px;
+    }
+
+    header .logo {
+        background-color: #888;
+    }
+
+    header .euro {
+        background-color: #777;
+        padding-bottom: 1rem;
+
+    }
+
+    header .time {
+        background-color: #666;
+        padding-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 480) {
+    html {
+        font-size: 6px;
+    }
+
+    header .logo {
+        background-color: #888;
+        padding-bottom: 1rem;
+    }
+
+    header .euro {
+        background-color: #777;
+
+    }
+
+    header .time {
+        background-color: #666;
+    }
+
+    .exchange {
+        margin-top: 5rem;
+    }
+}
