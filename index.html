@@ -191,13 +191,13 @@
 <!-- Kur reklam döngüsü -->
 <script type="module">
     import config from "./js/config.js"
-    // if(config.loop)
-    console.log(config.loop)
-    setTimeout(() => {
-        window.location.assign("billboard.html")
-    }, 1000)
+    if (config.loop == "1") {
+        setTimeout(() => {
+            window.location.assign("billboard.html")
+        }, 1000)
 
-    setInterval(() => {
-        window.history.forward()
-    }, config.exchangeTime)
+        setInterval(() => {
+            window.history.forward()
+        }, config.exchangeTime)
+    }
 </script>
