@@ -29,18 +29,18 @@
 
 <body>
     <!-- NAVBAR = LOGO-MONEY-TIME -->
-    <header>
-        <div class="container-fluid text-center">
+    <header class="my-3 mx-3">
+        <div class="container-fluid text-center py-4">
             <div class="row">
                 <div class="col-md-4 logo">
-                    <img src="logo.png" alt="LOGO" style="width: 9rem;">
+                    <h3 id="shop-name" style="font-weight: bold;">Shop Name</h3>
                 </div>
-                <div class="col-md-4 pt-4 euro">
+                <div class="col-md-4 euro">
                     <p style="font-size: 1.5rem; font-weight: bold;">1 <img class="mb-1" src="euro.png" alt=""
-                            style="width: 1.2rem;"></p>
+                            style="width: 1.3rem;"></p>
                 </div>
-                <div class="col-md-4 pt-4 time">
-                    <h4 id="realtime"></h4>
+                <div class="col-md-4 time">
+                    <h4 id="realtime" style="font-weight: bold;"></h6>
                 </div>
             </div>
         </div>
@@ -170,34 +170,36 @@
         </p>
     </div>
 
+    <!-- JS -->
+    <!-- Real Time Call -->
+    <script src="/js/realtime.js"></script>
+
+    <!-- Get Exchange-->
+    <script type="module">
+        import exchanges from "./js/exchanges.js"
+        for (var i in exchanges) {
+            let value = i.toLowerCase() + "-box"
+            let price = i.toLocaleLowerCase()
+            document.getElementById(value).style.display = "flex"
+            document.getElementById(price).innerHTML = exchanges[i]
+        }
+    </script>
+
+    <!-- Kur reklam döngüsü -->
+    <script type="module">
+        import config from "./js/config.js"
+        document.getElementById("shop-name").innerHTML = config.shopName.toUpperCase()
+        if (config.loop == "1") {
+            setTimeout(() => {
+                window.location.assign("billboard.html")
+            }, 1000)
+
+            setInterval(() => {
+                window.history.forward()
+            }, config.exchangeTime)
+        }
+    </script>
+
 </body>
 
 </html>
-
-<!-- Real Time Call -->
-<script src="/js/realtime.js"></script>
-
-<!-- Get Exchange-->
-<script type="module">
-    import exchanges from "./js/exchanges.js"
-    for (var i in exchanges) {
-        let value = i.toLowerCase() + "-box"
-        let price = i.toLocaleLowerCase()
-        document.getElementById(value).style.display = "flex"
-        document.getElementById(price).innerHTML = exchanges[i]
-    }
-</script>
-
-<!-- Kur reklam döngüsü -->
-<script type="module">
-    import config from "./js/config.js"
-    if (config.loop == "1") {
-        setTimeout(() => {
-            window.location.assign("billboard.html")
-        }, 1000)
-
-        setInterval(() => {
-            window.history.forward()
-        }, config.exchangeTime)
-    }
-</script>
